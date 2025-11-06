@@ -122,7 +122,7 @@
                 <p>Finde den perfekten PC für deinen Einsatz</p>
             </div>
             <div class="categories-grid">
-                <div class="category-card" onclick="filterByCategory('gaming')">
+                <div class="category-card" data-category="gaming">
                     <div class="category-icon">
                         <i class="fas fa-gamepad"></i>
                     </div>
@@ -130,7 +130,7 @@
                     <p>High-End Gaming Builds</p>
                     <div class="category-count">8 Builds</div>
                 </div>
-                <div class="category-card" onclick="filterByCategory('streaming')">
+                <div class="category-card" data-category="streaming">
                     <div class="category-icon">
                         <i class="fas fa-video"></i>
                     </div>
@@ -138,7 +138,7 @@
                     <p>Optimiert für Content Creation</p>
                     <div class="category-count">4 Builds</div>
                 </div>
-                <div class="category-card" onclick="filterByCategory('professional')">
+                <div class="category-card" data-category="professional">
                     <div class="category-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -146,7 +146,7 @@
                     <p>Professionelle Arbeitsplätze</p>
                     <div class="category-count">3 Builds</div>
                 </div>
-                <div class="category-card" onclick="filterByCategory('budget')">
+                <div class="category-card" data-category="budget">
                     <div class="category-icon">
                         <i class="fas fa-euro-sign"></i>
                     </div>
@@ -167,7 +167,7 @@
             </div>
             <div class="custom-content">
                 <div class="custom-options">
-                    <div class="option-card" onclick="openCustomConfigurator()">
+                    <div class="option-card" data-action="configurator">
                         <div class="option-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
@@ -175,7 +175,7 @@
                         <p>Komponenten selbst auswählen</p>
                         <button class="option-btn">Jetzt konfigurieren</button>
                     </div>
-                    <div class="option-card" onclick="openBuildAssistant()">
+                    <div class="option-card" data-action="assistant">
                         <div class="option-icon">
                             <i class="fas fa-magic"></i>
                         </div>

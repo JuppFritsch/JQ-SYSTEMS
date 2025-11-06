@@ -673,6 +673,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Add event listeners for featured builds
+    document.querySelectorAll('.featured-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const productName = item.querySelector('h3').textContent;
+            const productId = products.find(p => p.name.includes(productName.split(' ')[2]))?.id;
+            if (productId) {
+                cart.addItem(productId);
+            }
+        });
+    });
+
+    // Add event listeners for category cards
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const category = card.getAttribute('data-category');
+            if (category) {
+                filterByCategory(category);
+            }
+        });
+    });
+
+    // Add event listeners for custom build options
+    document.querySelectorAll('.option-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const action = card.getAttribute('data-action');
+            if (action === 'configurator') {
+                openCustomConfigurator();
+            } else if (action === 'assistant') {
+                openBuildAssistant();
+            }
+        });
+    });
+
     // Initialize with all products
     filter.applyFilters();
 
@@ -710,41 +743,104 @@ function filterByCategory(category) {
 }
 
 function openCustomConfigurator() {
-    // Redirect to main page configurator
-    window.location.href = 'index.html#configurator';
-}
-
-function openBuildAssistant() {
-    // Simple build assistant modal
+    // Open PC Konfigurator modal directly in shop
     const modal = document.createElement('div');
-    modal.className = 'build-assistant-modal';
+    modal.className = 'pc-configurator-modal';
     modal.innerHTML = `
         <div class="modal-overlay" onclick="closeModal(this.parentElement)">
-            <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-content large-modal" onclick="event.stopPropagation()">
                 <div class="modal-header">
-                    <h3>Build Assistant</h3>
-                    <button onclick="closeModal(this.closest('.build-assistant-modal'))" class="close-btn">
+                    <h3><i class="fas fa-cogs"></i> PC Konfigurator</h3>
+                    <button onclick="closeModal(this.closest('.pc-configurator-modal'))" class="close-btn">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h4>Wofür benötigst du deinen Gaming PC?</h4>
-                    <div class="assistant-options">
-                        <button class="assistant-btn" onclick="assistantRecommend('gaming')">
-                            <i class="fas fa-gamepad"></i>
-                            Gaming (1080p - 4K)
+                    <div class="configurator-content">
+                        <div class="config-step active" data-step="1">
+                            <h4>Wähle deine CPU</h4>
+                            <div class="component-grid">
+                                <div class="component-option" data-component="cpu" data-name="Intel i5-13600K" data-price="329">
+                                    <div class="component-info">
+                                        <h5>Intel i5-13600K</h5>
+                                        <p>14 Kerne, bis 5.1 GHz</p>
+                                        <span class="component-price">329€</span>
+                                    </div>
+                                </div>
+                                <div class="component-option" data-component="cpu" data-name="Intel i7-13700K" data-price="429">
+                                    <div class="component-info">
+                                        <h5>Intel i7-13700K</h5>
+                                        <p>16 Kerne, bis 5.4 GHz</p>
+                                        <span class="component-price">429€</span>
+                                    </div>
+                                </div>
+                                <div class="component-option" data-component="cpu" data-name="Intel i9-13900K" data-price="599">
+                                    <div class="component-info">
+                                        <h5>Intel i9-13900K</h5>
+                                        <p>24 Kerne, bis 5.8 GHz</p>
+                                        <span class="component-price">599€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-step" data-step="2">
+                            <h4>Wähle deine Grafikkarte</h4>
+                            <div class="component-grid">
+                                <div class="component-option" data-component="gpu" data-name="RTX 4060 Ti" data-price="449">
+                                    <div class="component-info">
+                                        <h5>RTX 4060 Ti 16GB</h5>
+                                        <p>1440p Gaming</p>
+                                        <span class="component-price">449€</span>
+                                    </div>
+                                </div>
+                                <div class="component-option" data-component="gpu" data-name="RTX 4070" data-price="649">
+                                    <div class="component-info">
+                                        <h5>RTX 4070 12GB</h5>
+                                        <p>1440p High-End Gaming</p>
+                                        <span class="component-price">649€</span>
+                                    </div>
+                                </div>
+                                <div class="component-option" data-component="gpu" data-name="RTX 4090" data-price="1699">
+                                    <div class="component-info">
+                                        <h5>RTX 4090 24GB</h5>
+                                        <p>4K Ultimate Gaming</p>
+                                        <span class="component-price">1699€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="config-step" data-step="3">
+                            <h4>Konfiguration abschließen</h4>
+                            <div class="config-summary">
+                                <h5>Deine Auswahl:</h5>
+                                <div class="selected-components">
+                                    <div class="selected-cpu">CPU: <span>Nicht ausgewählt</span></div>
+                                    <div class="selected-gpu">GPU: <span>Nicht ausgewählt</span></div>
+                                </div>
+                                <div class="total-price">
+                                    Gesamtpreis: <span class="price-value">0€</span>
+                                </div>
+                                <button class="add-custom-build" onclick="addCustomBuildToCart()">
+                                    <i class="fas fa-cart-plus"></i>
+                                    Custom Build in den Warenkorb
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="configurator-navigation">
+                        <button class="nav-btn prev-btn" onclick="previousConfigStep()" disabled>
+                            <i class="fas fa-arrow-left"></i> Zurück
                         </button>
-                        <button class="assistant-btn" onclick="assistantRecommend('streaming')">
-                            <i class="fas fa-video"></i>
-                            Streaming & Content Creation
-                        </button>
-                        <button class="assistant-btn" onclick="assistantRecommend('professional')">
-                            <i class="fas fa-briefcase"></i>
-                            Professionelle Arbeit
-                        </button>
-                        <button class="assistant-btn" onclick="assistantRecommend('budget')">
-                            <i class="fas fa-euro-sign"></i>
-                            Budget Gaming
+                        <div class="step-indicators">
+                            <span class="step-dot active" data-step="1"></span>
+                            <span class="step-dot" data-step="2"></span>
+                            <span class="step-dot" data-step="3"></span>
+                        </div>
+                        <button class="nav-btn next-btn" onclick="nextConfigStep()">
+                            Weiter <i class="fas fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -752,18 +848,61 @@ function openBuildAssistant() {
         </div>
     `;
     
-    // Add modal styles
-    Object.assign(modal.style, {
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        right: '0',
-        bottom: '0',
-        zIndex: '3000',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    });
+    document.body.appendChild(modal);
+    initializeConfigurator();
+}
+
+function openBuildAssistant() {
+    const modal = document.createElement('div');
+    modal.className = 'build-assistant-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="closeModal(this.parentElement)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h3><i class="fas fa-magic"></i> Build Assistant</h3>
+                    <button onclick="closeModal(this.closest('.build-assistant-modal'))" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="assistant-intro">
+                        <p>Lass mich dir helfen, den perfekten Gaming PC zu finden!</p>
+                        <h4>Wofür benötigst du deinen Gaming PC?</h4>
+                    </div>
+                    <div class="assistant-options">
+                        <button class="assistant-btn" onclick="assistantRecommend('gaming')">
+                            <i class="fas fa-gamepad"></i>
+                            <div class="btn-content">
+                                <strong>Gaming (1080p - 4K)</strong>
+                                <small>Für alle aktuellen Spiele</small>
+                            </div>
+                        </button>
+                        <button class="assistant-btn" onclick="assistantRecommend('streaming')">
+                            <i class="fas fa-video"></i>
+                            <div class="btn-content">
+                                <strong>Streaming & Content Creation</strong>
+                                <small>Videos bearbeiten & streamen</small>
+                            </div>
+                        </button>
+                        <button class="assistant-btn" onclick="assistantRecommend('professional')">
+                            <i class="fas fa-briefcase"></i>
+                            <div class="btn-content">
+                                <strong>Professionelle Arbeit</strong>
+                                <small>CAD, 3D-Rendering, Workstation</small>
+                            </div>
+                        </button>
+                        <button class="assistant-btn" onclick="assistantRecommend('budget')">
+                            <i class="fas fa-euro-sign"></i>
+                            <div class="btn-content">
+                                <strong>Budget Gaming</strong>
+                                <small>Günstiger Einstieg ins PC Gaming</small>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
     
     document.body.appendChild(modal);
 }
@@ -776,6 +915,120 @@ function assistantRecommend(type) {
     filterByCategory(type);
     
     showNotification(`Empfohlene ${type.toUpperCase()} PCs werden angezeigt!`, 'success');
+}
+
+// PC Configurator Functions
+let currentConfigStep = 1;
+let selectedComponents = {
+    cpu: null,
+    gpu: null
+};
+
+function initializeConfigurator() {
+    // Add click handlers for component options
+    document.querySelectorAll('.component-option').forEach(option => {
+        option.addEventListener('click', () => {
+            const component = option.dataset.component;
+            const name = option.dataset.name;
+            const price = parseInt(option.dataset.price);
+            
+            // Remove previous selection in this category
+            document.querySelectorAll(`[data-component="${component}"]`).forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // Select this option
+            option.classList.add('selected');
+            selectedComponents[component] = { name, price };
+            
+            // Update summary
+            updateConfigSummary();
+            
+            // Auto-advance to next step after selection
+            setTimeout(() => {
+                if (currentConfigStep < 3) {
+                    nextConfigStep();
+                }
+            }, 500);
+        });
+    });
+}
+
+function nextConfigStep() {
+    if (currentConfigStep < 3) {
+        currentConfigStep++;
+        updateConfigStep();
+    }
+}
+
+function previousConfigStep() {
+    if (currentConfigStep > 1) {
+        currentConfigStep--;
+        updateConfigStep();
+    }
+}
+
+function updateConfigStep() {
+    // Update step visibility
+    document.querySelectorAll('.config-step').forEach((step, index) => {
+        step.classList.toggle('active', index + 1 === currentConfigStep);
+    });
+    
+    // Update step indicators
+    document.querySelectorAll('.step-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index + 1 <= currentConfigStep);
+    });
+    
+    // Update navigation buttons
+    document.querySelector('.prev-btn').disabled = currentConfigStep === 1;
+    document.querySelector('.next-btn').style.display = currentConfigStep === 3 ? 'none' : 'block';
+}
+
+function updateConfigSummary() {
+    const cpuSpan = document.querySelector('.selected-cpu span');
+    const gpuSpan = document.querySelector('.selected-gpu span');
+    const priceSpan = document.querySelector('.price-value');
+    
+    cpuSpan.textContent = selectedComponents.cpu ? selectedComponents.cpu.name : 'Nicht ausgewählt';
+    gpuSpan.textContent = selectedComponents.gpu ? selectedComponents.gpu.name : 'Nicht ausgewählt';
+    
+    const totalPrice = (selectedComponents.cpu?.price || 0) + (selectedComponents.gpu?.price || 0) + 800; // Base price
+    priceSpan.textContent = `${totalPrice}€`;
+}
+
+function addCustomBuildToCart() {
+    if (!selectedComponents.cpu || !selectedComponents.gpu) {
+        showNotification('Bitte wähle CPU und GPU aus!', 'error');
+        return;
+    }
+    
+    const customBuild = {
+        id: Date.now(), // Unique ID for custom builds
+        name: `Custom Build - ${selectedComponents.cpu.name} + ${selectedComponents.gpu.name}`,
+        category: 'Custom Build',
+        price: (selectedComponents.cpu.price || 0) + (selectedComponents.gpu.price || 0) + 800,
+        image: 'fas fa-desktop',
+        specs: {
+            cpu: selectedComponents.cpu.name,
+            gpu: selectedComponents.gpu.name,
+            ram: '16GB DDR5-5600',
+            storage: '1TB NVMe SSD'
+        },
+        performance: {
+            'Custom': 'Individuell',
+            'Gaming': 'Optimiert'
+        },
+        stock: true,
+        featured: false
+    };
+    
+    cart.addItem(customBuild.id, 1);
+    
+    // Add to products array temporarily for cart functionality
+    products.push(customBuild);
+    
+    closeModal(document.querySelector('.pc-configurator-modal'));
+    showNotification('Custom Build wurde zum Warenkorb hinzugefügt!', 'success');
 }
 
 function closeModal(modal) {

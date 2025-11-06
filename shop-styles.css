@@ -1198,6 +1198,231 @@
 .assistant-btn i {
     color: var(--primary-cyan);
     width: 20px;
+    font-size: 1.2rem;
+}
+
+.assistant-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.assistant-intro p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.btn-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.btn-content strong {
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.btn-content small {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* PC Configurator Modal */
+.pc-configurator-modal .modal-content {
+    max-width: 800px;
+    width: 95%;
+    max-height: 90vh;
+}
+
+.large-modal {
+    min-height: 600px;
+}
+
+.configurator-content {
+    min-height: 400px;
+    position: relative;
+}
+
+.config-step {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.config-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.config-step h4 {
+    color: var(--primary-cyan);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.component-option {
+    background: rgba(0, 255, 240, 0.05);
+    border: 2px solid rgba(0, 255, 240, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.component-option:hover {
+    border-color: var(--primary-cyan);
+    background: rgba(0, 255, 240, 0.1);
+    transform: translateY(-2px);
+}
+
+.component-option.selected {
+    border-color: var(--primary-cyan);
+    background: rgba(0, 255, 240, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 240, 0.3);
+}
+
+.component-info h5 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.component-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.component-price {
+    color: var(--primary-cyan);
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.config-summary {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(0, 255, 240, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+.config-summary h5 {
+    color: var(--primary-cyan);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.selected-components {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.selected-cpu, .selected-gpu {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.selected-cpu span, .selected-gpu span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.total-price {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-cyan);
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(0, 255, 240, 0.1);
+    border-radius: 8px;
+}
+
+.add-custom-build {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--neon-blue));
+    border: none;
+    color: var(--dark-bg);
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.add-custom-build:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 255, 240, 0.4);
+}
+
+.configurator-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 0;
+    border-top: 1px solid rgba(0, 255, 240, 0.2);
+    margin-top: 30px;
+}
+
+.nav-btn {
+    background: rgba(0, 255, 240, 0.1);
+    border: 1px solid var(--primary-cyan);
+    color: var(--primary-cyan);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: rgba(0, 255, 240, 0.2);
+    transform: scale(1.05);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.step-indicators {
+    display: flex;
+    gap: 10px;
+}
+
+.step-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 255, 240, 0.3);
+    transition: all 0.3s ease;
+}
+
+.step-dot.active {
+    background: var(--primary-cyan);
+    box-shadow: 0 0 10px rgba(0, 255, 240, 0.5);
 }
 
 /* Responsive Design */
