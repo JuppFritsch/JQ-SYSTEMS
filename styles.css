@@ -779,7 +779,7 @@ html {
     align-items: center;
     gap: 15px;
     background: linear-gradient(135deg, var(--primary-neon), #0080ff);
-    color: var(--dark-bg);
+    color: white;
     text-decoration: none;
     padding: 20px 40px;
     border-radius: 35px;

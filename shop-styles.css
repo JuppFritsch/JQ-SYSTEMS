@@ -502,7 +502,7 @@
 .add-to-cart-btn {
     background: linear-gradient(135deg, var(--primary-cyan), var(--neon-blue));
     border: none;
-    color: var(--dark-bg);
+    color: white;
     padding: 12px 20px;
     border-radius: 25px;
     font-weight: 600;
@@ -673,7 +673,7 @@
     width: 100%;
     background: linear-gradient(135deg, var(--primary-cyan), var(--neon-blue));
     border: none;
-    color: var(--dark-bg);
+    color: white;
     padding: 15px;
     border-radius: 25px;
     font-weight: 700;
@@ -826,7 +826,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--dark-bg);
+    color: white;
     font-size: 1.5rem;
 }
 
@@ -890,7 +890,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--dark-bg);
+    color: white;
     font-size: 2rem;
 }
 
@@ -909,7 +909,7 @@
 .option-btn {
     background: linear-gradient(135deg, var(--primary-cyan), var(--neon-blue));
     border: none;
-    color: var(--dark-bg);
+    color: white;
     padding: 12px 25px;
     border-radius: 25px;
     font-weight: 600;
@@ -962,7 +962,7 @@
 .newsletter-btn {
     background: var(--primary-cyan);
     border: none;
-    color: var(--dark-bg);
+    color: white;
     padding: 15px 25px;
     border-radius: 25px;
     font-weight: 600;
@@ -1358,7 +1358,7 @@
 .add-custom-build {
     background: linear-gradient(135deg, var(--primary-cyan), var(--neon-blue));
     border: none;
-    color: var(--dark-bg);
+    color: white;
     padding: 15px 25px;
     border-radius: 25px;
     font-weight: 700;
