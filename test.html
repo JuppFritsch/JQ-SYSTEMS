@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQ-SYSTEMS Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #111; color: white; }
+        .success { color: #00ff88; }
+        .error { color: #ff4757; }
+    </style>
+</head>
+<body>
+    <h1>JQ-SYSTEMS Website Test</h1>
+    <p>Dieser Test überprüft, ob alle Komponenten geladen werden:</p>
+    
+    <div id="results">
+        <p id="css-test">❌ CSS wird geladen...</p>
+        <p id="js-test">❌ JavaScript wird geladen...</p>
+        <p id="fonts-test">❌ Fonts werden geladen...</p>
+        <p id="icons-test">❌ Icons werden geladen...</p>
+    </div>
+    
+    <script>
+        // Test CSS
+        fetch('styles.css')
+            .then(r => r.ok ? 
+                document.getElementById('css-test').innerHTML = '<span class="success">✅ CSS erfolgreich geladen</span>' :
+                document.getElementById('css-test').innerHTML = '<span class="error">❌ CSS Fehler</span>'
+            );
+        
+        // Test JS
+        fetch('script.js')
+            .then(r => r.ok ? 
+                document.getElementById('js-test').innerHTML = '<span class="success">✅ JavaScript erfolgreich geladen</span>' :
+                document.getElementById('js-test').innerHTML = '<span class="error">❌ JavaScript Fehler</span>'
+            );
+        
+        // Test Fonts
+        document.fonts.ready.then(() => {
+            document.getElementById('fonts-test').innerHTML = '<span class="success">✅ Fonts erfolgreich geladen</span>';
+        });
+        
+        // Test Icons (FontAwesome)
+        const icon = document.createElement('i');
+        icon.className = 'fas fa-home';
+        document.body.appendChild(icon);
+        setTimeout(() => {
+            const computed = window.getComputedStyle(icon);
+            if (computed.fontFamily.includes('Font Awesome')) {
+                document.getElementById('icons-test').innerHTML = '<span class="success">✅ Icons erfolgreich geladen</span>';
+            } else {
+                document.getElementById('icons-test').innerHTML = '<span class="error">❌ Icons Fehler</span>';
+            }
+        }, 1000);
+    </script>
+    
+    <br><br>
+    <p><a href="index.html" style="color: #00ff88;">🚀 Zur JQ-SYSTEMS Website</a></p>
+</body>
+</html>

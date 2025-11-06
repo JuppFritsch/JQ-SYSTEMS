@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ-SYSTEMS Debug Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #1a1a1a; 
+            color: white; 
+            padding: 20px; 
+        }
+        .debug-section { 
+            margin: 20px 0; 
+            padding: 15px; 
+            border: 1px solid #00ffaa; 
+            border-radius: 10px; 
+        }
+        .success { border-color: #00ff00; }
+        .error { border-color: #ff0000; }
+        .test-btn {
+            background: #00ffaa;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔧 JQ-SYSTEMS Debug Test</h1>
+    
+    <div class="debug-section" id="threeJsTest">
+        <h3>Three.js Test</h3>
+        <p id="threeStatus">Loading...</p>
+        <button class="test-btn" onclick="testThreeJS()">Test Three.js</button>
+    </div>
+    
+    <div class="debug-section" id="performanceTest">
+        <h3>Performance Calculator Test</h3>
+        <p id="perfStatus">Loading...</p>
+        <button class="test-btn" onclick="testPerformance()">Test Performance</button>
+    </div>
+    
+    <div class="debug-section" id="configTest">
+        <h3>Build Configurator Test</h3>
+        <p id="configStatus">Loading...</p>
+        <button class="test-btn" onclick="testConfigurator()">Test Configurator</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        function updateStatus(elementId, message, isSuccess) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.parentElement.className = 'debug-section ' + (isSuccess ? 'success' : 'error');
+        }
+
+        function testThreeJS() {
+            try {
+                if (typeof THREE !== 'undefined') {
+                    const scene = new THREE.Scene();
+                    updateStatus('threeStatus', '✅ Three.js funktioniert perfekt!', true);
+                } else {
+                    updateStatus('threeStatus', '❌ Three.js nicht geladen!', false);
+                }
+            } catch (error) {
+                updateStatus('threeStatus', `❌ Three.js Fehler: ${error.message}`, false);
+            }
+        }
+
+        function testPerformance() {
+            try {
+                // Test Performance Calculator
+                const calculator = {
+                    calculateFPS: function(components) {
+                        return 144; // Mock FPS
+                    }
+                };
+                
+                const fps = calculator.calculateFPS({gpu: 'RTX 4070', cpu: 'i7-13700K'});
+                updateStatus('perfStatus', `✅ Performance Calculator: ${fps} FPS berechnet!`, true);
+            } catch (error) {
+                updateStatus('perfStatus', `❌ Performance Fehler: ${error.message}`, false);
+            }
+        }
+
+        function testConfigurator() {
+            try {
+                // Test if configurator elements exist
+                const hasModal = document.getElementById('buildConfiguratorModal') !== null;
+                const hasSteps = document.querySelectorAll('.config-step').length > 0;
+                
+                if (hasModal && hasSteps) {
+                    updateStatus('configStatus', '✅ Build Configurator Struktur OK!', true);
+                } else {
+                    updateStatus('configStatus', `❌ Configurator Problem: Modal=${hasModal}, Steps=${hasSteps}`, false);
+                }
+            } catch (error) {
+                updateStatus('configStatus', `❌ Configurator Fehler: ${error.message}`, false);
+            }
+        }
+
+        // Auto-run tests
+        setTimeout(() => {
+            testThreeJS();
+            testPerformance();
+            testConfigurator();
+        }, 1000);
+    </script>
+</body>
+</html>

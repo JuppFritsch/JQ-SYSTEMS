@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ-SYSTEMS - Elite Gaming Builds</title>
+    <meta name="description" content="JQ-SYSTEMS - Custom Gaming PC Builds von Quentin & Jupp. Innovative Designs, maximale Performance.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js für 3D Visualizer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Clean Background -->
+    <div class="clean-bg"></div>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+        <div class="logo-container">
+            <div class="logo">
+                <span class="logo-text">JQ</span>
+                <span class="logo-sub">SYSTEMS</span>
+            </div>
+        </div>
+        <div class="nav-items">
+            <a href="#intro" class="nav-item" data-section="intro">
+                <span class="nav-icon"><i class="fas fa-home"></i></span>
+                <span class="nav-label">Intro</span>
+            </a>
+            <a href="#builds" class="nav-item" data-section="builds">
+                <span class="nav-icon"><i class="fas fa-microchip"></i></span>
+                <span class="nav-label">Builds</span>
+            </a>
+            <a href="#process" class="nav-item" data-section="process">
+                <span class="nav-icon"><i class="fas fa-cogs"></i></span>
+                <span class="nav-label">Process</span>
+            </a>
+            <a href="#founders" class="nav-item" data-section="founders">
+                <span class="nav-icon"><i class="fas fa-users"></i></span>
+                <span class="nav-label">Founders</span>
+            </a>
+            <a href="#services" class="nav-item" data-section="services">
+                <span class="nav-icon"><i class="fas fa-concierge-bell"></i></span>
+                <span class="nav-label">Services</span>
+            </a>
+            <a href="#connect" class="nav-item" data-section="connect">
+                <span class="nav-icon"><i class="fas fa-bolt"></i></span>
+                <span class="nav-label">Connect</span>
+            </a>
+        </div>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Intro Section -->
+        <section id="intro" class="section intro-section">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <div class="glitch-text" data-text="JQ-SYSTEMS">JQ-SYSTEMS</div>
+                    <h1>Elite Gaming<br><span class="highlight">Experience</span></h1>
+                    <p class="intro-description">
+                        Wir erschaffen Gaming-Maschinen, die Grenzen überwinden. 
+                        Jeder Build ist eine Symphonie aus Performance, Ästhetik und Innovation.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="6">0</span>
+                            <span class="stat-label">Builds</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">% Satisfaction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="24">0</span>
+                            <span class="stat-label">Monate Experience</span>
+                        </div>
+                    </div>
+                    <button class="cta-button" id="openConfigurator">
+                        <span>Projekt starten</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="intro-visual">
+                    <div class="main-logo-container">
+                        <img src="img/logo2.png" alt="JQ-SYSTEMS Logo" class="main-logo">
+                        <div class="logo-glow-ring"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Builds Section -->
+        <section id="builds" class="section builds-section">
+            <div class="builds-container">
+                <div class="builds-header">
+                <h2>Signature <span class="neon-text">Builds</span></h2>
+                <p>Handcrafted Gaming Machines</p>
+            </div>
+            <div class="builds-carousel">
+                <div class="build-cards">
+                    <div class="build-card active" data-build="predator">
+                        <div class="card-header">
+                            <div class="build-icon"><i class="fas fa-dragon"></i></div>
+                            <div class="build-tier">PREDATOR</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Gaming Predator</h3>
+                            <div class="specs">
+                                <div class="spec">RTX 4090 • 24GB VRAM</div>
+                                <div class="spec">i9-13900K • 24 Cores</div>
+                                <div class="spec">64GB DDR5-5600</div>
+                                <div class="spec">2TB NVMe Gen4</div>
+                            </div>
+                            <div class="price-tag">
+                                <span class="currency">€</span>
+                                <span class="amount">4,299</span>
+                            </div>
+                        </div>
+                        <div class="performance-bars">
+                            <div class="perf-item">
+                                <span>Gaming</span>
+                                <div class="bar"><div class="fill" style="width: 100%"></div></div>
+                            </div>
+                            <div class="perf-item">
+                                <span>Streaming</span>
+                                <div class="bar"><div class="fill" style="width: 95%"></div></div>
+                            </div>
+                            <div class="perf-item">
+                                <span>Rendering</span>
+                                <div class="bar"><div class="fill" style="width: 100%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="build-card" data-build="phantom">
+                        <div class="card-header">
+                            <div class="build-icon"><i class="fas fa-ghost"></i></div>
+                            <div class="build-tier">PHANTOM</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Silent Phantom</h3>
+                            <div class="specs">
+                                <div class="spec">RTX 4070 Ti • 12GB</div>
+                                <div class="spec">i7-13700K • 16 Cores</div>
+                                <div class="spec">32GB DDR5-5200</div>
+                                <div class="spec">1TB NVMe Gen4</div>
+                            </div>
+                            <div class="price-tag">
+                                <span class="currency">€</span>
+                                <span class="amount">2,799</span>
+                            </div>
+                        </div>
+                        <div class="performance-bars">
+                            <div class="perf-item">
+                                <span>Gaming</span>
+                                <div class="bar"><div class="fill" style="width: 95%"></div></div>
+                            </div>
+                            <div class="perf-item">
+                                <span>Streaming</span>
+                                <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                            </div>
+                            <div class="perf-item">
+                                <span>Rendering</span>
+                                <div class="bar"><div class="fill" style="width: 80%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="build-card" data-build="voltage">
+                        <div class="card-header">
+                            <div class="build-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="build-tier">VOLTAGE</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Pure Voltage</h3>
+                            <div class="specs">
+                                <div class="spec">RTX 4060 Ti • 16GB</div>
+                                <div class="spec">i5-13600K • 14 Cores</div>
+                                <div class="spec">16GB DDR5-4800</div>
+                                <div class="spec">1TB NVMe</div>
+                            </div>
+                            <div class="price-tag">
+                                <span class="currency">€</span>
+                                <span class="amount">1,899</span>
+                            </div>
+                        </div>
+                        <div class="performance-bars">
+                            <div class="perf-item">
+                                <span>Gaming</span>
+                                <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                            </div>
+                            <div class="perf-item">
+                                <span>Streaming</span>
+                                <div class="bar"><div class="fill" style="width: 75%"></div></div>
+                            </div>
+                            <div class="perf-item">
+                                <span>Rendering</span>
+                                <div class="bar"><div class="fill" style="width: 70%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="control-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="control-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section process-section">
+            <div class="process-container">
+                <div class="process-header">
+                    <h2>Build <span class="gradient-text">Process</span></h2>
+                    <p>Wie wir Träume in Performance verwandeln</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item" data-step="1">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="step-number">01</div>
+                            <h3>Consultation</h3>
+                            <p>Analyse deiner Gaming-Bedürfnisse und Budget-Planung</p>
+                            <div class="step-icon"><i class="fas fa-comments"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-step="2">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="step-number">02</div>
+                            <h3>Configuration</h3>
+                            <p>Präzise Komponentenauswahl für optimale Performance</p>
+                            <div class="step-icon"><i class="fas fa-microchip"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-step="3">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="step-number">03</div>
+                            <h3>Assembly</h3>
+                            <p>Professioneller Build mit perfektem Kabelmanagement</p>
+                            <div class="step-icon"><i class="fas fa-tools"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-step="4">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="step-number">04</div>
+                            <h3>Optimization</h3>
+                            <p>System-Tuning und Stress-Tests für maximale Stabilität</p>
+                            <div class="step-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item" data-step="5">
+                        <div class="timeline-dot">
+                            <div class="dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="step-number">05</div>
+                            <h3>Delivery</h3>
+                            <p>Sichere Übergabe deiner Gaming-Maschine</p>
+                            <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founders Section -->
+        <section id="founders" class="section founders-section">
+            <div class="founders-container">
+                <div class="section-header">
+                    <h2>Unser <span class="gradient-text">Team</span></h2>
+                    <p>Die Köpfe hinter den Gaming-Builds</p>
+                </div>
+                <div class="founders-grid">
+                <div class="founder-card quentin">
+                    <div class="card-background"></div>
+                    <div class="founder-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-inner">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                    </div>
+                    <div class="founder-info">
+                        <h3>Quentin</h3>
+                        <div class="founder-title">Hardware Architect/CEO</div>
+                        <div class="skills">
+                            <div class="skill-bar">
+                                <span>Performance Tuning</span>
+                                <div class="bar"><div class="fill" data-width="95"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <span>Component Selection</span>
+                                <div class="bar"><div class="fill" data-width="98"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <span>Cooling Solutions</span>
+                                <div class="bar"><div class="fill" data-width="92"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="founder-card jupp">
+                    <div class="card-background"></div>
+                    <div class="founder-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-inner">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                    </div>
+                    <div class="founder-info">
+                        <h3>Jupp</h3>
+                        <div class="founder-title">Software Virtuoso/CEO</div>
+                        <div class="skills">
+                            <div class="skill-bar">
+                                <span>System Optimization</span>
+                                <div class="bar"><div class="fill" data-width="96"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <span>Driver Mastery</span>
+                                <div class="bar"><div class="fill" data-width="94"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <span>Gaming Setup</span>
+                                <div class="bar"><div class="fill" data-width="99"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section id="connect" class="section connect-section">
+            <div class="connect-wrapper">
+                <div class="section-header">
+                    <h2>Let's <span class="neon-text">Connect</span></h2>
+                    <p>Bereit für deine Gaming-Maschine?</p>
+                </div>
+                <div class="connect-container">
+                <div class="connect-left">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <span class="terminal-title">JQ-SYSTEMS:Connect</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> initiating_connection...
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">></span> Ready for new project
+                            </div>
+                            <div class="terminal-line typing">
+                                <span class="prompt">></span> <span class="typing-text">Lass uns deinen Gaming-Traum verwirklichen</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon discord">
+                                <i class="fab fa-discord"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Discord</h4>
+                                <p>JQ-Systems#0001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon email">
+                                <i class="fas fa-at"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>E-Mail</h4>
+                                <p>builds@jq-systems.de</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon phone">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>WhatsApp</h4>
+                                <p>+49 175 123 4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="connect-right">
+                    <div class="contact-info">
+                        <h3>Bereit für euren <span class="neon-text">Gaming-Build</span>?</h3>
+                        <p>Nutzt unseren Build-Konfigurator für eine maßgeschneiderte PC-Konfiguration oder kontaktiert uns direkt für eine persönliche Beratung.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span>E-Mail</span>
+                                    <a href="mailto:info@jq-systems.de">info@jq-systems.de</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <span>Telefon</span>
+                                    <a href="tel:+4912345678">+49 123 456 78</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <span>Öffnungszeiten</span>
+                                    <span>Mo-Fr: 9:00-18:00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="cyber-button" id="openConfigurator">
+                            <span>BUILD KONFIGURATOR ÖFFNEN</span>
+                            <div class="button-glow"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services-section">
+            <div class="services-container">
+                <div class="section-header">
+                    <h2>Premium <span class="neon-text">Services</span></h2>
+                    <p>Rundum-Sorglos-Pakete für euren Gaming-PC</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Assembly Service -->
+                    <div class="service-card assembly">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Profi-Zusammenbau</h3>
+                        <div class="service-price">
+                            <span class="price">€50</span>
+                            <span class="period">einmalig</span>
+                        </div>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Fachgerechter Zusammenbau</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Perfektes Kabelmanagement</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>System-Tests & Optimization</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>30 Tage Garantie</span>
+                            </div>
+                        </div>
+                        <button class="service-btn" data-service="assembly">
+                            <span>Auswählen</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Care Package -->
+                    <div class="service-card care popular">
+                        <div class="popular-badge">
+                            <i class="fas fa-star"></i>
+                            <span>Beliebt</span>
+                        </div>
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Care Paket</h3>
+                        <div class="service-price">
+                            <span class="price">€50</span>
+                            <span class="period">pro Jahr</span>
+                        </div>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>2x jährliche PC-Reinigung</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Hardware-Diagnose</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Software-Updates</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Prioritärer Support</span>
+                            </div>
+                        </div>
+                        <button class="service-btn" data-service="care">
+                            <span>Auswählen</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Thermal Service -->
+                    <div class="service-card thermal">
+                        <div class="service-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h3>Thermal Service</h3>
+                        <div class="service-price">
+                            <span class="price">€25</span>
+                            <span class="period">pro Jahr</span>
+                        </div>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Wärmeleitpaste erneuern</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Temperatur-Check</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Lüfter-Optimierung</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Performance-Report</span>
+                            </div>
+                        </div>
+                        <button class="service-btn" data-service="thermal">
+                            <span>Auswählen</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Upgrade Service -->
+                    <div class="service-card upgrade">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Upgrade Service</h3>
+                        <div class="service-price">
+                            <span class="price">€25</span>
+                            <span class="period">pro Upgrade</span>
+                        </div>
+                        <div class="service-features">
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Hardware-Installation</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Treiber-Setup</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Kompatibilitäts-Check</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check"></i>
+                                <span>Performance-Tuning</span>
+                            </div>
+                        </div>
+                        <button class="service-btn" data-service="upgrade">
+                            <span>Auswählen</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Packages -->
+                <div class="service-packages">
+                    <h3>🎁 Service-Pakete kombinieren</h3>
+                    <div class="package-grid">
+                        <div class="service-package basic">
+                            <h4>Basic Paket</h4>
+                            <div class="package-price">€65<span>/Jahr</span></div>
+                            <div class="package-includes">
+                                <div class="included-service">Care Paket (€50)</div>
+                                <div class="included-service">Thermal Service (€25)</div>
+                                <div class="package-savings">Spare €10!</div>
+                            </div>
+                            <button class="package-btn" data-service="basicPackage">
+                                <span>Basic wählen</span>
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+
+                        <div class="service-package premium">
+                            <div class="premium-badge">
+                                <i class="fas fa-crown"></i>
+                                <span>Premium</span>
+                            </div>
+                            <h4>Premium Paket</h4>
+                            <div class="package-price">€90<span>/Jahr</span></div>
+                            <div class="package-includes">
+                                <div class="included-service">Care Paket (€50)</div>
+                                <div class="included-service">Thermal Service (€25)</div>
+                                <div class="included-service">2x Upgrades (€50)</div>
+                                <div class="package-savings">Spare €35!</div>
+                            </div>
+                            <button class="package-btn" data-service="premiumPackage">
+                                <span>Premium wählen</span>
+                                <i class="fas fa-crown"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Build Konfigurator Modal -->
+    <div class="build-configurator-modal" id="buildConfiguratorModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Build <span class="neon-text">Konfigurator</span></h2>
+                <button class="modal-close" id="closeConfigurator">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="configurator-content">
+                <!-- 3D PC Visualizer -->
+                <div class="pc-visualizer">
+                    <div class="visualizer-header">
+                        <h3><i class="fas fa-cube"></i> 3D PC Preview</h3>
+                        <div class="visualizer-controls">
+                            <button class="viz-control" id="rotateLeft"><i class="fas fa-undo"></i></button>
+                            <button class="viz-control" id="resetView"><i class="fas fa-home"></i></button>
+                            <button class="viz-control" id="rotateRight"><i class="fas fa-redo"></i></button>
+                        </div>
+                    </div>
+                    <div id="pcVisualizerContainer" class="visualizer-container">
+                        <div class="loading-3d" id="loading3D">
+                            <i class="fas fa-cog fa-spin"></i>
+                            <span>3D Modell wird geladen...</span>
+                            <button class="skip-3d-btn" onclick="skip3DLoading()" id="skip3DBtn" style="display: none;">
+                                <i class="fas fa-forward"></i> 2D Ansicht verwenden
+                            </button>
+                        </div>
+                    </div>
+                    <div class="performance-preview">
+                        <div class="performance-item">
+                            <span class="perf-label">Gaming FPS</span>
+                            <span class="perf-value" id="predictedFPS">-- FPS</span>
+                        </div>
+                        <div class="performance-item">
+                            <span class="perf-label">Benchmark Score</span>
+                            <span class="perf-value" id="benchmarkScore">--</span>
+                        </div>
+                        <div class="rgb-preview">
+                            <span class="rgb-label">RGB Theme:</span>
+                            <div class="rgb-color-indicator" id="rgbPreview"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                    <div class="progress-steps">
+                        <div class="step active" data-step="1">Design</div>
+                        <div class="step" data-step="2">Budget</div>
+                        <div class="step" data-step="3">Zweck</div>
+                        <div class="step" data-step="4">Gehäuse</div>
+                        <div class="step" data-step="5">CPU</div>
+                        <div class="step" data-step="6">GPU</div>
+                        <div class="step" data-step="7">RAM</div>
+                        <div class="step" data-step="8">Storage</div>
+                        <div class="step" data-step="9">Extras</div>
+                    </div>
+                </div>
+                
+                <!-- Step 1: Design -->
+                <div class="config-step active" data-step="1">
+                    <h3>Wähle dein Design</h3>
+                    <div class="option-grid">
+                        <div class="config-option" data-value="white">
+                            <div class="option-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>White Build</h4>
+                            <p>Clean & Minimal</p>
+                        </div>
+                        <div class="config-option" data-value="black">
+                            <div class="option-icon">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <h4>Black Build</h4>
+                            <p>Dark & Powerful</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Budget -->
+                <div class="config-step" data-step="2">
+                    <h3>Maximales Budget</h3>
+                    <div class="budget-section">
+                        <div class="budget-info">
+                            <p>Wie viel möchtet ihr maximal ausgeben? Wir optimieren euren Build für das beste Preis-Leistungs-Verhältnis.</p>
+                        </div>
+                        
+                        <div class="budget-options">
+                            <div class="budget-presets">
+                                <h4 class="category-title"><i class="fas fa-tags"></i> Beliebte Budgets</h4>
+                                <div class="preset-grid">
+                                    <div class="budget-preset" data-budget="1500">
+                                        <div class="preset-icon">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <h5>Einsteiger</h5>
+                                        <div class="preset-price">€1.500</div>
+                                        <p>Solides Gaming Setup</p>
+                                    </div>
+                                    <div class="budget-preset" data-budget="2500">
+                                        <div class="preset-icon">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <h5>Performance</h5>
+                                        <div class="preset-price">€2.500</div>
+                                        <p>High-End Gaming</p>
+                                    </div>
+                                    <div class="budget-preset" data-budget="4000">
+                                        <div class="preset-icon">
+                                            <i class="fas fa-crown"></i>
+                                        </div>
+                                        <h5>Premium</h5>
+                                        <div class="preset-price">€4.000</div>
+                                        <p>Ultimate Experience</p>
+                                    </div>
+                                    <div class="budget-preset" data-budget="unlimited">
+                                        <div class="preset-icon">
+                                            <i class="fas fa-infinity"></i>
+                                        </div>
+                                        <h5>No Limit</h5>
+                                        <div class="preset-price">∞</div>
+                                        <p>Sky is the limit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="custom-budget">
+                                <h4 class="category-title"><i class="fas fa-sliders-h"></i> Individuelles Budget</h4>
+                                <div class="budget-slider-container">
+                                    <div class="slider-wrapper">
+                                        <input type="range" 
+                                               id="budgetSlider" 
+                                               min="800" 
+                                               max="6000" 
+                                               step="100" 
+                                               value="2500" 
+                                               class="budget-slider">
+                                        <div class="slider-track"></div>
+                                    </div>
+                                    <div class="budget-display">
+                                        <div class="current-budget">
+                                            <span class="currency">€</span>
+                                            <span id="budgetValue">2.500</span>
+                                        </div>
+                                        <div class="budget-range">
+                                            <span>€800</span>
+                                            <span>€6.000+</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="budget-recommendation">
+                            <div class="recommendation-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="recommendation-content">
+                                <h5>Unser Tipp</h5>
+                                <p id="budgetRecommendation">Für ein ausgewogenes Gaming-Setup empfehlen wir mindestens €1.500. Ab €2.500 könnt ihr bereits High-End Gaming genießen.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="budget-promise">
+                            <div class="promise-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="promise-content">
+                                <h5>🎯 Unser Versprechen</h5>
+                                <p><strong>Lasst euch NICHT vom angezeigten Preis abschrecken!</strong> Wir passen jeden Build an euer gewünschtes Budget an. Die Auswahl hier hilft uns nur dabei, eure Wünsche und Prioritäten besser zu verstehen. Egal ob €800 oder €4000 - wir finden die beste Lösung für euer Budget!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Verwendungszweck -->
+                <div class="config-step" data-step="3">
+                    <h3>Verwendungszweck</h3>
+                    <div class="usage-section">
+                        <div class="usage-info">
+                            <p>Wofür wollt ihr euren PC hauptsächlich nutzen? Das hilft uns bei der Auswahl der richtigen Komponenten für eure Bedürfnisse.</p>
+                        </div>
+                        
+                        <div class="usage-grid">
+                            <div class="usage-option" data-usage="fps-gaming">
+                                <div class="usage-icon">
+                                    <i class="fas fa-crosshairs"></i>
+                                </div>
+                                <h4>FPS Gaming</h4>
+                                <p>Hohe Framerate für Shooter</p>
+                                <div class="usage-features">
+                                    <span><i class="fas fa-check"></i> 144+ FPS</span>
+                                    <span><i class="fas fa-check"></i> Niedrige Latenz</span>
+                                    <span><i class="fas fa-check"></i> Gaming-CPU</span>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-option" data-usage="video-editing">
+                                <div class="usage-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h4>Videoschnitt</h4>
+                                <p>Video & Bildbearbeitung</p>
+                                <div class="usage-features">
+                                    <span><i class="fas fa-check"></i> Viel RAM</span>
+                                    <span><i class="fas fa-check"></i> Render-Power</span>
+                                    <span><i class="fas fa-check"></i> Schnelle SSD</span>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-option" data-usage="streaming">
+                                <div class="usage-icon">
+                                    <i class="fas fa-broadcast-tower"></i>
+                                </div>
+                                <h4>Streaming</h4>
+                                <p>Gaming + Live-Stream</p>
+                                <div class="usage-features">
+                                    <span><i class="fas fa-check"></i> Multitasking</span>
+                                    <span><i class="fas fa-check"></i> Encoding-Power</span>
+                                    <span><i class="fas fa-check"></i> Stabile Performance</span>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-option" data-usage="casual-gaming">
+                                <div class="usage-icon">
+                                    <i class="fas fa-gamepad"></i>
+                                </div>
+                                <h4>Casual Gaming</h4>
+                                <p>Entspanntes Gaming</p>
+                                <div class="usage-features">
+                                    <span><i class="fas fa-check"></i> 60+ FPS</span>
+                                    <span><i class="fas fa-check"></i> Leise</span>
+                                    <span><i class="fas fa-check"></i> Energiesparend</span>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-option" data-usage="workstation">
+                                <div class="usage-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h4>Workstation</h4>
+                                <p>CAD, 3D-Rendering</p>
+                                <div class="usage-features">
+                                    <span><i class="fas fa-check"></i> Professionelle GPU</span>
+                                    <span><i class="fas fa-check"></i> Viele Kerne</span>
+                                    <span><i class="fas fa-check"></i> ECC-RAM möglich</span>
+                                </div>
+                            </div>
+                            
+                            <div class="usage-option" data-usage="all-around">
+                                <div class="usage-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h4>Allrounder</h4>
+                                <p>Für alles ein bisschen</p>
+                                <div class="usage-features">
+                                    <span><i class="fas fa-check"></i> Balanced Build</span>
+                                    <span><i class="fas fa-check"></i> Zukunftssicher</span>
+                                    <span><i class="fas fa-check"></i> Vielseitig</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Gehäuse -->
+                <div class="config-step" data-step="4">
+                    <h3>Gehäuse Größe</h3>
+                    <div class="option-grid">
+                        <div class="config-option" data-value="mini-itx">
+                            <div class="option-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h4>Mini ITX</h4>
+                            <p>Kompakt & Platzsparend</p>
+                        </div>
+                        <div class="config-option" data-value="mid-tower">
+                            <div class="option-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4>Mid Tower</h4>
+                            <p>Optimal & Ausgewogen</p>
+                        </div>
+                        <div class="config-option" data-value="full-tower">
+                            <div class="option-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <h4>Full Tower</h4>
+                            <p>Maximal & Erweiterbar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 5: CPU -->
+                <div class="config-step" data-step="5">
+                    <h3>Prozessor</h3>
+                    <div class="option-grid">
+                        <div class="config-option" data-value="intel">
+                            <div class="option-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h4>Intel</h4>
+                            <p>Gaming Performance</p>
+                        </div>
+                        <div class="config-option" data-value="amd">
+                            <div class="option-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h4>AMD</h4>
+                            <p>Multicore Power</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 6: GPU -->
+                <div class="config-step" data-step="6">
+                    <h3>Grafikkarte</h3>
+                    
+                    <!-- Expert Choice Option -->
+                    <div class="expert-choice-section">
+                        <h4 class="category-title"><i class="fas fa-magic"></i> Expert Auswahl</h4>
+                        <div class="option-grid expert-grid">
+                            <div class="config-option" data-value="expert-amd">
+                                <div class="option-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <h4>AMD - Ihr wählt aus</h4>
+                                <p>Wir suchen die beste AMD GPU für euer Budget</p>
+                            </div>
+                            <div class="config-option" data-value="expert-nvidia">
+                                <div class="option-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <h4>NVIDIA - Ihr wählt aus</h4>
+                                <p>Wir suchen die beste NVIDIA GPU für euer Budget</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gpu-categories">
+                        <div class="gpu-category">
+                            <h4 class="category-title"><i class="fas fa-fire"></i> AMD Radeon</h4>
+                            <div class="option-grid">
+                                <div class="config-option" data-value="rx6600">
+                                    <div class="option-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4>RX 6600</h4>
+                                    <p>Entry Gaming</p>
+                                </div>
+                                <div class="config-option" data-value="rx6700">
+                                    <div class="option-icon">
+                                        <i class="fas fa-flash"></i>
+                                    </div>
+                                    <h4>RX 6700 XT</h4>
+                                    <p>Solid 1440p</p>
+                                </div>
+                                <div class="config-option" data-value="rx7600">
+                                    <div class="option-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <h4>RX 7600</h4>
+                                    <p>Modern Gaming</p>
+                                </div>
+                                <div class="config-option" data-value="rx7700">
+                                    <div class="option-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h4>RX 7700 XT</h4>
+                                    <p>High Performance</p>
+                                </div>
+                                <div class="config-option" data-value="rx7800">
+                                    <div class="option-icon">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <h4>RX 7800 XT</h4>
+                                    <p>Enthusiast</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gpu-category">
+                            <h4 class="category-title"><i class="fas fa-microchip"></i> NVIDIA GeForce</h4>
+                            <div class="option-grid">
+                                <div class="config-option" data-value="rtx4060">
+                                    <div class="option-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4>RTX 4060</h4>
+                                    <p>Ray Tracing Entry</p>
+                                </div>
+                                <div class="config-option" data-value="rtx4060ti">
+                                    <div class="option-icon">
+                                        <i class="fas fa-flash"></i>
+                                    </div>
+                                    <h4>RTX 4060 Ti</h4>
+                                    <p>Solid RTX</p>
+                                </div>
+                                <div class="config-option" data-value="rtx4070">
+                                    <div class="option-icon">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <h4>RTX 4070</h4>
+                                    <p>High Performance</p>
+                                </div>
+                                <div class="config-option" data-value="rtx4070ti">
+                                    <div class="option-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h4>RTX 4070 Ti</h4>
+                                    <p>Premium Gaming</p>
+                                </div>
+                                <div class="config-option" data-value="rtx4080">
+                                    <div class="option-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <h4>RTX 4080</h4>
+                                    <p>Ultra Gaming</p>
+                                </div>
+                                <div class="config-option" data-value="rtx4090">
+                                    <div class="option-icon">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <h4>RTX 4090</h4>
+                                    <p>Maximum Power</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 7: RAM -->
+                <div class="config-step" data-step="7">
+                    <h3>Arbeitsspeicher</h3>
+                    <div class="option-grid">
+                        <div class="config-option" data-value="16gb">
+                            <div class="option-icon">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <h4>16GB DDR5</h4>
+                            <p>Standard Gaming</p>
+                        </div>
+                        <div class="config-option" data-value="32gb">
+                            <div class="option-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h4>32GB DDR5</h4>
+                            <p>High Performance</p>
+                        </div>
+                        <div class="config-option" data-value="64gb">
+                            <div class="option-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>64GB DDR5</h4>
+                            <p>Professional</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 8: Storage -->
+                <div class="config-step" data-step="8">
+                    <h3>Speicher</h3>
+                    <div class="storage-categories">
+                        <div class="storage-category">
+                            <h4 class="category-title"><i class="fas fa-tachometer-alt"></i> SSD Only (Schnell)</h4>
+                            <div class="option-grid">
+                                <div class="config-option" data-value="500gb-ssd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4>500GB SSD</h4>
+                                    <p>Basis Setup</p>
+                                </div>
+                                <div class="config-option" data-value="1tb-ssd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-flash"></i>
+                                    </div>
+                                    <h4>1TB SSD</h4>
+                                    <p>Standard Gaming</p>
+                                </div>
+                                <div class="config-option" data-value="2tb-ssd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <h4>2TB SSD</h4>
+                                    <p>Premium Speed</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="storage-category">
+                            <h4 class="category-title"><i class="fas fa-database"></i> HDD Only (Günstig)</h4>
+                            <div class="option-grid">
+                                <div class="config-option" data-value="1tb-hdd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-hdd"></i>
+                                    </div>
+                                    <h4>1TB HDD</h4>
+                                    <p>Budget Option</p>
+                                </div>
+                                <div class="config-option" data-value="2tb-hdd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-archive"></i>
+                                    </div>
+                                    <h4>2TB HDD</h4>
+                                    <p>Viel Speicher</p>
+                                </div>
+                                <div class="config-option" data-value="4tb-hdd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <h4>4TB HDD</h4>
+                                    <p>Maximum Storage</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="storage-category">
+                            <h4 class="category-title"><i class="fas fa-layer-group"></i> SSD + HDD (Optimal)</h4>
+                            <div class="option-grid">
+                                <div class="config-option" data-value="500gb-ssd-1tb-hdd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <h4>500GB SSD + 1TB HDD</h4>
+                                    <p>Speed + Storage</p>
+                                </div>
+                                <div class="config-option" data-value="1tb-ssd-2tb-hdd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h4>1TB SSD + 2TB HDD</h4>
+                                    <p>Best Balance</p>
+                                </div>
+                                <div class="config-option" data-value="2tb-ssd-4tb-hdd">
+                                    <div class="option-icon">
+                                        <i class="fas fa-crown"></i>
+                                    </div>
+                                    <h4>2TB SSD + 4TB HDD</h4>
+                                    <p>Ultimate Setup</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 9: Extrawünsche -->
+                <div class="config-step" data-step="9">
+                    <h3>Extrawünsche & Anmerkungen</h3>
+                    <div class="extras-section">
+                        <div class="quick-extras">
+                            <h4 class="category-title"><i class="fas fa-star"></i> Beliebte Extras</h4>
+                            <div class="extras-grid">
+                                <div class="extra-option" data-extra="rgb">
+                                    <div class="extra-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <span>RGB Beleuchtung</span>
+                                </div>
+                                <div class="extra-option" data-extra="watercooling">
+                                    <div class="extra-icon">
+                                        <i class="fas fa-tint"></i>
+                                    </div>
+                                    <span>Wasserkühlung</span>
+                                </div>
+                                <div class="extra-option" data-extra="wifi">
+                                    <div class="extra-icon">
+                                        <i class="fas fa-wifi"></i>
+                                    </div>
+                                    <span>WiFi 6E</span>
+                                </div>
+                                <div class="extra-option" data-extra="windows">
+                                    <div class="extra-icon">
+                                        <i class="fab fa-windows"></i>
+                                    </div>
+                                    <span>Windows 11</span>
+                                </div>
+                                <div class="extra-option" data-extra="cable-management">
+                                    <div class="extra-icon">
+                                        <i class="fas fa-plug"></i>
+                                    </div>
+                                    <span>Premium Kabel</span>
+                                </div>
+                                <div class="extra-option" data-extra="overclocking">
+                                    <div class="extra-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <span>Overclocking Setup</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="custom-wishes">
+                            <h4 class="category-title"><i class="fas fa-comment-dots"></i> Eure individuellen Wünsche</h4>
+                            <div class="textarea-container">
+                                <textarea 
+                                    id="customWishes" 
+                                    placeholder="Habt ihr spezielle Wünsche? Bestimmte Marken? Farb-Präferenzen? Besondere Gaming-Anforderungen? Lasst es uns wissen!"
+                                    rows="6"
+                                ></textarea>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span> / 500 Zeichen
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="budget-note">
+                            <div class="note-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="note-content">
+                                <h5>💡 Wichtiger Hinweis zum Preis</h5>
+                                <p><strong>Der angezeigte Preis ist nur eine grobe Schätzung!</strong> Wir halten uns an euer Budget und optimieren die Komponenten entsprechend. Diese Konfiguration hilft uns zu verstehen, welche Features und Performance ihr euch wünscht. Der finale Preis richtet sich nach eurem Budget - nicht nach der Schätzung!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="price-flexibility">
+                            <div class="flex-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="flex-content">
+                                <h5>❤️ Faire Preise garantiert</h5>
+                                <p>Egal welche Konfiguration ihr hier auswählt - wir arbeiten IMMER innerhalb eures Budgets und finden kreative Lösungen, um eure Träume zu erfüllen. Vertraut uns!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Performance Analysis Step -->
+                <div class="config-step" data-step="performance">
+                    <h3>🎮 Performance Analyse</h3>
+                    <div class="performance-analysis">
+                        <div class="analysis-header">
+                            <p>Basierend auf eurer Auswahl haben wir die erwartete Gaming-Performance berechnet:</p>
+                        </div>
+                        
+                        <div class="performance-grid">
+                            <!-- Gaming FPS Predictions -->
+                            <div class="performance-card fps-card">
+                                <div class="card-header">
+                                    <i class="fas fa-gamepad"></i>
+                                    <h4>Gaming Performance</h4>
+                                </div>
+                                <div class="fps-predictions" id="fpsPredicitions">
+                                    <!-- Wird dynamisch gefüllt -->
+                                </div>
+                                <div class="average-fps">
+                                    <span>Durchschnitt:</span>
+                                    <span id="avgFPS" class="fps-value">-- FPS</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Benchmark Scores -->
+                            <div class="performance-card benchmark-card">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <h4>Benchmark Scores</h4>
+                                </div>
+                                <div class="benchmark-list">
+                                    <div class="benchmark-item">
+                                        <span>3DMark Time Spy</span>
+                                        <span id="timeSpy" class="score-value">--</span>
+                                    </div>
+                                    <div class="benchmark-item">
+                                        <span>Cinebench R23</span>
+                                        <span id="cinebench" class="score-value">--</span>
+                                    </div>
+                                    <div class="benchmark-item">
+                                        <span>UserBenchmark</span>
+                                        <span id="userBench" class="score-value">--</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- RGB Theme Selector -->
+                            <div class="performance-card rgb-card">
+                                <div class="card-header">
+                                    <i class="fas fa-palette"></i>
+                                    <h4>RGB Beleuchtung</h4>
+                                </div>
+                                <div class="rgb-themes">
+                                    <div class="rgb-theme" data-color="0x00ffaa" style="background: #00ffaa;">
+                                        <span>Gaming Green</span>
+                                    </div>
+                                    <div class="rgb-theme" data-color="0xff0080" style="background: #ff0080;">
+                                        <span>Neon Pink</span>
+                                    </div>
+                                    <div class="rgb-theme" data-color="0x0080ff" style="background: #0080ff;">
+                                        <span>Cyber Blue</span>
+                                    </div>
+                                    <div class="rgb-theme" data-color="0xff8000" style="background: #ff8000;">
+                                        <span>Fire Orange</span>
+                                    </div>
+                                    <div class="rgb-theme active" data-color="0xffffff" style="background: linear-gradient(45deg, #ff0080, #00ff80, #0080ff);">
+                                        <span>RGB Rainbow</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="performance-summary">
+                            <div class="summary-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h5>🏆 Performance Rating</h5>
+                                <p id="performanceRating">Berechnung läuft...</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Debug-Bereich für Troubleshooting -->
+                        <div class="debug-controls" style="margin-top: 20px; padding: 15px; border: 1px solid #ff4444; border-radius: 10px;">
+                            <h5 style="color: #ff4444; margin: 0 0 10px 0;">🔧 Debug Controls</h5>
+                            <button onclick="forceFinishButton()" style="background: #ff4444; color: white; border: none; padding: 10px 15px; border-radius: 5px; margin-right: 10px; cursor: pointer;">
+                                Fertig-Button forcieren
+                            </button>
+                            <button onclick="debugCurrentStep()" style="background: #0080ff; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+                                Step Status prüfen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="configurator-footer">
+                    <button class="config-btn prev-btn" id="prevStep" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                        Zurück
+                    </button>
+                    <div class="price-display">
+                        <div class="price-info">
+                            <span class="estimated-price">Geschätzter Preis: €<span id="estimatedPrice">1,500</span></span>
+                            <span class="price-disclaimer">⚡ Wir halten euer Budget ein!</span>
+                        </div>
+                    </div>
+                    <button class="config-btn next-btn" id="nextStep" disabled>
+                        Weiter
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="config-btn finish-btn" id="finishConfig" style="display: none;">
+                        Projekt anfragen
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="modal-overlay"></div>
+        <div class="contact-modal-container">
+            <div class="contact-modal-header">
+                <h2><i class="fas fa-paper-plane"></i> Projekt anfragen</h2>
+                <button class="modal-close" id="closeContactModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="contact-modal-content">
+                <div class="build-summary">
+                    <h3><i class="fas fa-desktop"></i> Eure Build-Konfiguration</h3>
+                    <div class="summary-grid" id="buildSummary">
+                        <!-- Build summary will be populated by JavaScript -->
+                    </div>
+                    <div class="estimated-total">
+                        <span class="total-label">Geschätzter Preis:</span>
+                        <span class="total-price">€<span id="summaryPrice">1,500</span></span>
+                    </div>
+                    <div class="budget-promise">
+                        <i class="fas fa-handshake"></i>
+                        <p>Wir passen den Build an euer gewünschtes Budget an!</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="projectForm">
+                    <h3><i class="fas fa-user"></i> Kontaktdaten</h3>
+                    
+                    <div class="form-group">
+                        <label for="customerName">
+                            <i class="fas fa-user"></i>
+                            Name *
+                        </label>
+                        <input type="text" id="customerName" name="name" required placeholder="Euer Vor- und Nachname">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerEmail">
+                            <i class="fas fa-envelope"></i>
+                            E-Mail *
+                        </label>
+                        <input type="email" id="customerEmail" name="email" required placeholder="eure@email.de">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customerPhone">
+                            <i class="fas fa-phone"></i>
+                            Telefon (optional)
+                        </label>
+                        <input type="tel" id="customerPhone" name="phone" placeholder="+49 123 456789">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="projectDeadline">
+                            <i class="fas fa-calendar"></i>
+                            Gewünschter Fertigstellungstermin
+                        </label>
+                        <select id="projectDeadline" name="deadline">
+                            <option value="">Kein bestimmter Termin</option>
+                            <option value="asap">So schnell wie möglich</option>
+                            <option value="1week">Innerhalb 1 Woche</option>
+                            <option value="2weeks">Innerhalb 2 Wochen</option>
+                            <option value="1month">Innerhalb 1 Monat</option>
+                            <option value="flexible">Flexibel</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additionalNotes">
+                            <i class="fas fa-comment"></i>
+                            Zusätzliche Wünsche & Anmerkungen
+                        </label>
+                        <textarea id="additionalNotes" name="notes" rows="4" placeholder="Habt ihr spezielle Wünsche oder Fragen? Teilt sie uns hier mit..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="action-btn secondary" id="cancelContact">
+                            <i class="fas fa-times"></i>
+                            Abbrechen
+                        </button>
+                        <button type="submit" class="action-btn primary" id="submitProject">
+                            <i class="fas fa-rocket"></i>
+                            Projekt anfragen
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Selection Modal -->
+    <div class="service-modal" id="serviceModal">
+        <div class="modal-overlay"></div>
+        <div class="service-modal-container">
+            <div class="service-modal-header">
+                <h2>Service <span class="neon-text">Konfigurator</span></h2>
+                <button class="modal-close" id="closeServiceModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="service-modal-content">
+                <div class="selected-services">
+                    <h3>🛠️ Deine Service-Auswahl</h3>
+                    <div id="servicesList" class="services-list">
+                        <div class="empty-selection">
+                            <i class="fas fa-mouse-pointer"></i>
+                            <p>Wähle deine gewünschten Services aus</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-calculator">
+                    <div class="total-cost">
+                        <div class="cost-breakdown" id="costBreakdown">
+                            <!-- Cost breakdown will be populated by JavaScript -->
+                        </div>
+                        <div class="total-display">
+                            <span class="total-label">Gesamtkosten (Jahr 1):</span>
+                            <span class="total-amount" id="totalAmount">€0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="service-actions">
+                        <button class="action-btn secondary" id="clearServices">
+                            <i class="fas fa-trash"></i>
+                            Auswahl löschen
+                        </button>
+                        <button class="action-btn primary" id="requestQuote">
+                            <i class="fas fa-paper-plane"></i>
+                            Angebot anfragen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">JQ</span>
+                        <span class="logo-sub">SYSTEMS</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Elite Gaming Experience<br>
+                        <span class="neon-text">Built by Passion</span>
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#builds">Custom Builds</a></li>
+                        <li><a href="#process">Build Process</a></li>
+                        <li><a href="#">Upgrades</a></li>
+                        <li><a href="#">Wartung</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#connect">Kontakt</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Garantie</a></li>
+                        <li><a href="#">Tech Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Kontakt Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>builds@jq-systems.de</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-discord"></i>
+                            <span>JQ-Systems#0001</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>+49 175 123 4567</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 JQ-SYSTEMS. Alle Rechte vorbehalten.</p>
+                    <div class="footer-legal">
+                        <a href="#">Datenschutz</a>
+                        <a href="#">Impressum</a>
+                        <a href="#">AGB</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Schnellkontakt Widget -->
+    <div class="quick-contact-widget">
+        <div class="quick-contact-trigger">
+            <i class="fas fa-comments"></i>
+            <span class="pulse-ring"></span>
+        </div>
+        <div class="quick-contact-menu">
+            <div class="quick-contact-item" onclick="openContactModal()">
+                <i class="fas fa-envelope"></i>
+                <span>Kontakt</span>
+            </div>
+            <div class="quick-contact-item" onclick="copyToClipboard('JQ_Gaming#1337')">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+            </div>
+            <div class="quick-contact-item" onclick="window.open('https://wa.me/491234567890', '_blank')">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </div>
+            <div class="quick-contact-item" onclick="window.location.href='tel:+491234567890'">
+                <i class="fas fa-phone"></i>
+                <span>Anrufen</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
