@@ -473,11 +473,15 @@ class ProductFilter {
                             `<div class="perf-badge">${key}: ${value}</div>`
                         ).join('')}
                     </div>
-                    <div class="product-footer">
-                        <div class="product-price">${product.price.toLocaleString('de-DE')} €</div>
+                    <div class="product-price">${product.price.toLocaleString('de-DE')} €</div>
+                    <div class="product-actions-grid">
                         <button class="add-to-cart-btn" onclick="cart.addItem(${product.id})">
                             <i class="fas fa-cart-plus"></i>
-                            In den Warenkorb
+                            Warenkorb
+                        </button>
+                        <button class="view-details-btn" onclick="showProductDetails(${product.id})">
+                            <i class="fas fa-eye"></i>
+                            Details
                         </button>
                     </div>
                 </div>
@@ -677,9 +681,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.featured-item').forEach(item => {
         item.addEventListener('click', () => {
             const productName = item.querySelector('h3').textContent;
-            const productId = products.find(p => p.name.includes(productName.split(' ')[2]))?.id;
+            let productId = null;
+            
+            // Find product by name matching
+            if (productName.includes('Gaming Beast')) productId = 1;
+            else if (productName.includes('Esports Champion')) productId = 2;
+            else if (productName.includes('Content Creator')) productId = 3;
+            
             if (productId) {
-                cart.addItem(productId);
+                showProductDetails(productId);
             }
         });
     });
@@ -1029,6 +1039,149 @@ function addCustomBuildToCart() {
     
     closeModal(document.querySelector('.pc-configurator-modal'));
     showNotification('Custom Build wurde zum Warenkorb hinzugefügt!', 'success');
+}
+
+// Product Details Modal
+function showProductDetails(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'product-details-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="closeModal(this.parentElement)">
+            <div class="modal-content product-modal" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h3><i class="fas fa-desktop"></i> ${product.name}</h3>
+                    <button onclick="closeModal(this.closest('.product-details-modal'))" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="product-detail-content">
+                        <div class="product-detail-left">
+                            <div class="product-detail-image">
+                                <i class="${product.image}"></i>
+                                ${product.badge ? `<div class="detail-badge">${product.badge}</div>` : ''}
+                            </div>
+                            <div class="product-gallery">
+                                <div class="gallery-thumb active">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div class="gallery-thumb">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="gallery-thumb">
+                                    <i class="fas fa-tv"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-detail-right">
+                            <div class="product-category-badge">${product.category}</div>
+                            <h2 class="product-detail-title">${product.name}</h2>
+                            
+                            <div class="product-specs-detailed">
+                                <h4><i class="fas fa-cogs"></i> Technische Spezifikationen</h4>
+                                <div class="specs-grid">
+                                    <div class="spec-row">
+                                        <span class="spec-label"><i class="fas fa-microchip"></i> Prozessor:</span>
+                                        <span class="spec-value">${product.specs.cpu}</span>
+                                    </div>
+                                    <div class="spec-row">
+                                        <span class="spec-label"><i class="fas fa-tv"></i> Grafikkarte:</span>
+                                        <span class="spec-value">${product.specs.gpu}</span>
+                                    </div>
+                                    <div class="spec-row">
+                                        <span class="spec-label"><i class="fas fa-memory"></i> Arbeitsspeicher:</span>
+                                        <span class="spec-value">${product.specs.ram}</span>
+                                    </div>
+                                    <div class="spec-row">
+                                        <span class="spec-label"><i class="fas fa-hdd"></i> Speicher:</span>
+                                        <span class="spec-value">${product.specs.storage}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="product-performance-detailed">
+                                <h4><i class="fas fa-chart-line"></i> Gaming Performance</h4>
+                                <div class="performance-grid">
+                                    ${Object.entries(product.performance).map(([game, fps]) => `
+                                        <div class="performance-item">
+                                            <span class="game-name">${game}</span>
+                                            <span class="fps-value">${fps}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="product-features">
+                                <h4><i class="fas fa-star"></i> Highlights</h4>
+                                <ul class="features-list">
+                                    <li><i class="fas fa-check"></i> 3 Jahre Herstellergarantie</li>
+                                    <li><i class="fas fa-check"></i> Windows 11 Pro vorinstalliert</li>
+                                    <li><i class="fas fa-check"></i> Kostenloser 24h Stress-Test</li>
+                                    <li><i class="fas fa-check"></i> Alle Treiber vorinstalliert</li>
+                                    <li><i class="fas fa-check"></i> Kostenlose Lieferung</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="product-price-section">
+                        <div class="price-info">
+                            <span class="price-label">Preis:</span>
+                            <span class="price-value">${product.price.toLocaleString('de-DE')} €</span>
+                        </div>
+                        <div class="price-note">inkl. MwSt. & kostenloser Versand</div>
+                    </div>
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="10">
+                            <button class="qty-btn" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <button class="add-to-cart-detailed" onclick="addDetailedProductToCart(${product.id})">
+                            <i class="fas fa-cart-plus"></i>
+                            In den Warenkorb
+                        </button>
+                        <button class="buy-now-btn" onclick="buyNowProduct(${product.id})">
+                            <i class="fas fa-bolt"></i>
+                            Sofort kaufen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+}
+
+function changeQuantity(delta) {
+    const input = document.querySelector('.qty-input');
+    const currentValue = parseInt(input.value);
+    const newValue = Math.max(1, Math.min(10, currentValue + delta));
+    input.value = newValue;
+}
+
+function addDetailedProductToCart(productId) {
+    const quantity = parseInt(document.querySelector('.qty-input').value);
+    cart.addItem(productId, quantity);
+    closeModal(document.querySelector('.product-details-modal'));
+}
+
+function buyNowProduct(productId) {
+    const quantity = parseInt(document.querySelector('.qty-input').value);
+    cart.addItem(productId, quantity);
+    closeModal(document.querySelector('.product-details-modal'));
+    
+    // Open cart sidebar
+    document.querySelector('.cart-sidebar').classList.add('active');
+    document.querySelector('.cart-overlay').classList.add('active');
+    
+    showNotification('Produkt hinzugefügt! Warenkorb geöffnet.', 'success');
 }
 
 function closeModal(modal) {

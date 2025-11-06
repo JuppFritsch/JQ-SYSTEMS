@@ -486,17 +486,19 @@
     font-weight: 600;
 }
 
-.product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .product-price {
     font-family: 'Orbitron', monospace;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-cyan);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.product-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .add-to-cart-btn {
@@ -516,6 +518,28 @@
 .add-to-cart-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 255, 240, 0.4);
+}
+
+.view-details-btn {
+    background: rgba(0, 255, 240, 0.1);
+    border: 1px solid var(--primary-cyan);
+    color: var(--primary-cyan);
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.view-details-btn:hover {
+    background: rgba(0, 255, 240, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 240, 0.2);
 }
 
 /* Load More Button */
@@ -1425,6 +1449,330 @@
     box-shadow: 0 0 10px rgba(0, 255, 240, 0.5);
 }
 
+/* Product Details Modal */
+.product-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-modal {
+    max-width: 1000px;
+    width: 95%;
+    max-height: 90vh;
+    min-height: 600px;
+}
+
+.product-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.product-detail-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-detail-image {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, rgba(0, 255, 240, 0.1), rgba(0, 128, 255, 0.1));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 240, 0.3);
+}
+
+.product-detail-image i {
+    font-size: 5rem;
+    color: var(--primary-cyan);
+    opacity: 0.8;
+}
+
+.detail-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--neon-pink);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.product-gallery {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery-thumb {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 255, 240, 0.1);
+    border: 1px solid rgba(0, 255, 240, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--primary-cyan);
+}
+
+.gallery-thumb:hover,
+.gallery-thumb.active {
+    border-color: var(--primary-cyan);
+    background: rgba(0, 255, 240, 0.2);
+}
+
+.product-detail-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.product-category-badge {
+    background: rgba(0, 255, 240, 0.2);
+    color: var(--primary-cyan);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+
+.product-detail-title {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.product-specs-detailed h4,
+.product-performance-detailed h4,
+.product-features h4 {
+    color: var(--primary-cyan);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.specs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 255, 240, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-cyan);
+}
+
+.spec-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spec-label i {
+    color: var(--primary-cyan);
+    width: 16px;
+}
+
+.spec-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.performance-item {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.game-name {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.fps-value {
+    color: var(--accent-green);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.features-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.features-list li {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.features-list i {
+    color: var(--accent-green);
+    font-size: 0.8rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0, 255, 240, 0.2);
+}
+
+.product-price-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.price-info {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.price-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.price-value {
+    color: var(--primary-cyan);
+    font-family: 'Orbitron', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.price-note {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 255, 240, 0.1);
+    border: 1px solid rgba(0, 255, 240, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    color: var(--primary-cyan);
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+    background: rgba(0, 255, 240, 0.2);
+}
+
+.qty-input {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    text-align: center;
+    width: 50px;
+    height: 35px;
+    font-weight: 600;
+    outline: none;
+}
+
+.add-to-cart-detailed {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--neon-blue));
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-to-cart-detailed:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 255, 240, 0.4);
+}
+
+.buy-now-btn {
+    background: linear-gradient(135deg, var(--neon-pink), #ff6b35);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.buy-now-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 0, 128, 0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -1433,6 +1781,31 @@
     
     .mobile-menu-btn {
         display: flex;
+    }
+    
+    .product-detail-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-detail-image {
+        height: 200px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+    }
+    
+    .product-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .product-actions-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
     
     .hero-stats {
