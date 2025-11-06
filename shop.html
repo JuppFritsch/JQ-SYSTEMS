@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ-SYSTEMS Gaming PC Shop - Elite Builds</title>
+    <meta name="description" content="Premium Gaming PC Shop von JQ-SYSTEMS. Entdecke unsere Elite Gaming Builds, Custom PCs und High-End Komponenten.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shop-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="shop-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="img/logo2.png" alt="JQ-SYSTEMS Logo" class="nav-logo-img">
+                <span class="nav-logo-text">JQ-SYSTEMS</span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#featured" class="nav-link">Featured</a>
+                <a href="#categories" class="nav-link">Kategorien</a>
+                <a href="#custom" class="nav-link">Custom Build</a>
+                <a href="index.html#connect" class="nav-link">Kontakt</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" onclick="toggleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Gaming PC suchen..." id="searchInput">
+            <button class="search-close" onclick="toggleSearch()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="shop-hero">
+        <div class="hero-content">
+            <h1>Gaming PC <span class="neon-text">Shop</span></h1>
+            <p>Premium Gaming Builds für jeden Anspruch</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Gaming PCs</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">€799</span>
+                    <span class="stat-label">Ab Preis</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Lieferzeit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <div class="filter-header">
+                <h3>Filter</h3>
+                <button class="clear-filters" onclick="clearAllFilters()">
+                    <i class="fas fa-times"></i> Zurücksetzen
+                </button>
+            </div>
+            
+            <div class="filter-grid">
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <h4>Budget</h4>
+                    <div class="price-range">
+                        <input type="range" min="799" max="6999" value="799" id="minPrice" oninput="updatePriceFilter()">
+                        <input type="range" min="799" max="6999" value="6999" id="maxPrice" oninput="updatePriceFilter()">
+                        <div class="price-display">
+                            <span id="priceMin">€799</span> - <span id="priceMax">€6999</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="filter-group">
+                    <h4>Kategorie</h4>
+                    <div class="filter-options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="entry" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            Entry Gaming
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="mid" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            Mid-Range
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="high" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            High-End
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="extreme" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            Extreme
+                        </label>
+                    </div>
+                </div>
+
+                <!-- GPU Filter -->
+                <div class="filter-group">
+                    <h4>Grafikkarte</h4>
+                    <div class="filter-options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="rtx4060" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            RTX 4060 Series
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="rtx4070" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            RTX 4070 Series
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="rtx4080" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            RTX 4080 Series
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="rtx4090" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            RTX 4090
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Usage Filter -->
+                <div class="filter-group">
+                    <h4>Verwendung</h4>
+                    <div class="filter-options">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="gaming" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            Gaming
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="streaming" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            Streaming
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="workstation" onchange="applyFilters()">
+                            <span class="checkmark"></span>
+                            Workstation
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="products-container">
+            <div class="products-header">
+                <div class="results-info">
+                    <span id="resultsCount">20</span> Gaming PCs gefunden
+                </div>
+                <div class="sort-options">
+                    <select id="sortSelect" onchange="sortProducts()">
+                        <option value="featured">Empfohlen</option>
+                        <option value="price-low">Preis: Niedrig → Hoch</option>
+                        <option value="price-high">Preis: Hoch → Niedrig</option>
+                        <option value="performance">Performance</option>
+                        <option value="newest">Neueste zuerst</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="load-more-btn" onclick="loadMoreProducts()">
+                    <i class="fas fa-plus"></i>
+                    Mehr Gaming PCs laden
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Warenkorb</h3>
+            <button class="cart-close" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-content" id="cartContent">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Dein Warenkorb ist leer</p>
+                <p class="empty-cart-subtitle">Füge Gaming PCs hinzu!</p>
+            </div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Gesamt: <span id="cartTotal">€0</span></span>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">
+                <i class="fas fa-credit-card"></i>
+                Zur Kasse
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h3>🎮 Gaming News & Angebote</h3>
+                <p>Bleib up-to-date mit den neuesten Gaming PC Releases und exklusiven Deals!</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Deine E-Mail Adresse" class="newsletter-input">
+                    <button class="newsletter-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Anmelden
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="shop-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>JQ-SYSTEMS</h4>
+                <p>Premium Gaming PC Builds seit 2024</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                    <li><a href="#gaming-pcs">Gaming PCs</a></li>
+                    <li><a href="#workstations">Workstations</a></li>
+                    <li><a href="#components">Komponenten</a></li>
+                    <li><a href="#accessories">Zubehör</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Service</h4>
+                <ul class="footer-links">
+                    <li><a href="#support">Support</a></li>
+                    <li><a href="#warranty">Garantie</a></li>
+                    <li><a href="#shipping">Versand</a></li>
+                    <li><a href="#returns">Rücksendung</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> builds@jq-systems.de</li>
+                    <li><i class="fas fa-phone"></i> +49 175 123 4567</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Deutschland</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 JQ-SYSTEMS. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="shop-script.js"></script>
+</body>
+</html>
