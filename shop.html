@@ -24,6 +24,7 @@
                 <a href="#featured" class="nav-link">Featured</a>
                 <a href="#categories" class="nav-link">Kategorien</a>
                 <a href="#custom" class="nav-link">Custom Build</a>
+                <a href="support.html" class="nav-link">Support</a>
                 <a href="index.html#connect" class="nav-link">Kontakt</a>
             </div>
             
@@ -69,6 +70,119 @@
                 <div class="stat">
                     <span class="stat-number">24h</span>
                     <span class="stat-label">Lieferzeit</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section id="featured" class="featured-section">
+        <div class="featured-container">
+            <div class="section-header">
+                <h2>Featured Builds</h2>
+                <p>Unsere beliebtesten Gaming PCs</p>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-item">
+                    <div class="featured-badge">Bestseller</div>
+                    <div class="featured-image">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Gaming Beast RTX 4090</h3>
+                    <p>Ultimate 4K Gaming Performance</p>
+                    <div class="featured-price">€3.299</div>
+                </div>
+                <div class="featured-item">
+                    <div class="featured-badge">Preis-Hit</div>
+                    <div class="featured-image">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Esports Champion</h3>
+                    <p>Competitive Gaming Optimiert</p>
+                    <div class="featured-price">€1.899</div>
+                </div>
+                <div class="featured-item">
+                    <div class="featured-badge">Creator's Choice</div>
+                    <div class="featured-image">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Content Creator Pro</h3>
+                    <p>Streaming & Video Editing</p>
+                    <div class="featured-price">€2.799</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section">
+        <div class="categories-container">
+            <div class="section-header">
+                <h2>Shop Kategorien</h2>
+                <p>Finde den perfekten PC für deinen Einsatz</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterByCategory('gaming')">
+                    <div class="category-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Gaming PCs</h3>
+                    <p>High-End Gaming Builds</p>
+                    <div class="category-count">8 Builds</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('streaming')">
+                    <div class="category-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Streaming PCs</h3>
+                    <p>Optimiert für Content Creation</p>
+                    <div class="category-count">4 Builds</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('professional')">
+                    <div class="category-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Workstations</h3>
+                    <p>Professionelle Arbeitsplätze</p>
+                    <div class="category-count">3 Builds</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('budget')">
+                    <div class="category-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Budget PCs</h3>
+                    <p>Einstieg ins PC Gaming</p>
+                    <div class="category-count">5 Builds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Build Section -->
+    <section id="custom" class="custom-section">
+        <div class="custom-container">
+            <div class="section-header">
+                <h2>Custom Build Konfigurator</h2>
+                <p>Stelle deinen individuellen Gaming PC zusammen</p>
+            </div>
+            <div class="custom-content">
+                <div class="custom-options">
+                    <div class="option-card" onclick="openCustomConfigurator()">
+                        <div class="option-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>PC Konfigurator</h3>
+                        <p>Komponenten selbst auswählen</p>
+                        <button class="option-btn">Jetzt konfigurieren</button>
+                    </div>
+                    <div class="option-card" onclick="openBuildAssistant()">
+                        <div class="option-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Build Assistant</h3>
+                        <p>Empfehlungen basierend auf Budget</p>
+                        <button class="option-btn">Assistant starten</button>
+                    </div>
                 </div>
             </div>
         </div>

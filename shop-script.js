@@ -679,6 +679,115 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('JQ-SYSTEMS Shop initialized successfully!');
 });
 
+// Navigation Functions
+function filterByCategory(category) {
+    // Clear existing filters
+    filter.clearAllFilters();
+    
+    // Apply category filter based on category mapping
+    const categoryMapping = {
+        'gaming': ['High-End Gaming', 'Competitive Gaming'],
+        'streaming': ['Streaming', 'Content Creation'],
+        'professional': ['Professional'],
+        'budget': ['Entry Level']
+    };
+    
+    if (categoryMapping[category]) {
+        filter.filters.categories = categoryMapping[category];
+        filter.applyFilters();
+        
+        // Scroll to products
+        document.querySelector('.products-section').scrollIntoView({
+            behavior: 'smooth'
+        });
+        
+        // Update UI to show selected categories
+        categoryMapping[category].forEach(cat => {
+            const checkbox = document.querySelector(`input[value="${cat}"]`);
+            if (checkbox) checkbox.checked = true;
+        });
+    }
+}
+
+function openCustomConfigurator() {
+    // Redirect to main page configurator
+    window.location.href = 'index.html#configurator';
+}
+
+function openBuildAssistant() {
+    // Simple build assistant modal
+    const modal = document.createElement('div');
+    modal.className = 'build-assistant-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="closeModal(this.parentElement)">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <div class="modal-header">
+                    <h3>Build Assistant</h3>
+                    <button onclick="closeModal(this.closest('.build-assistant-modal'))" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Wofür benötigst du deinen Gaming PC?</h4>
+                    <div class="assistant-options">
+                        <button class="assistant-btn" onclick="assistantRecommend('gaming')">
+                            <i class="fas fa-gamepad"></i>
+                            Gaming (1080p - 4K)
+                        </button>
+                        <button class="assistant-btn" onclick="assistantRecommend('streaming')">
+                            <i class="fas fa-video"></i>
+                            Streaming & Content Creation
+                        </button>
+                        <button class="assistant-btn" onclick="assistantRecommend('professional')">
+                            <i class="fas fa-briefcase"></i>
+                            Professionelle Arbeit
+                        </button>
+                        <button class="assistant-btn" onclick="assistantRecommend('budget')">
+                            <i class="fas fa-euro-sign"></i>
+                            Budget Gaming
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal styles
+    Object.assign(modal.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        zIndex: '3000',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    });
+    
+    document.body.appendChild(modal);
+}
+
+function assistantRecommend(type) {
+    // Close modal and filter by recommendation
+    const modal = document.querySelector('.build-assistant-modal');
+    if (modal) modal.remove();
+    
+    filterByCategory(type);
+    
+    showNotification(`Empfohlene ${type.toUpperCase()} PCs werden angezeigt!`, 'success');
+}
+
+function closeModal(modal) {
+    if (modal) modal.remove();
+}
+
+function toggleMobileMenu() {
+    // Mobile menu functionality
+    console.log('Mobile menu toggled');
+    // TODO: Implement mobile menu if needed
+}
+
 // Utility Functions
 function formatPrice(price) {
     return `${price.toLocaleString('de-DE')} €`;
