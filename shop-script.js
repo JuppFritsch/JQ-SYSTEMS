@@ -127,6 +127,132 @@ const products = [
         },
         stock: true,
         featured: false
+    },
+    {
+        id: 7,
+        name: "Gaming Elite RTX 4080 Super",
+        category: "High-End Gaming",
+        price: 2899,
+        image: "fas fa-desktop",
+        badge: "Gaming Elite",
+        specs: {
+            cpu: "Intel i7-13700K",
+            gpu: "RTX 4080 Super 16GB",
+            ram: "32GB DDR5-6000",
+            storage: "1TB NVMe SSD"
+        },
+        performance: {
+            "4K High": "85+ FPS",
+            "1440p Ultra": "140+ FPS",
+            "Ray Tracing": "Excellent"
+        },
+        stock: true,
+        featured: false
+    },
+    {
+        id: 8,
+        name: "Competitive Pro RTX 4060",
+        category: "Competitive Gaming",
+        price: 1399,
+        image: "fas fa-desktop",
+        badge: "Esports Ready",
+        specs: {
+            cpu: "Intel i5-13600K",
+            gpu: "RTX 4060 8GB",
+            ram: "16GB DDR5-5600",
+            storage: "1TB NVMe SSD"
+        },
+        performance: {
+            "1080p Ultra": "120+ FPS",
+            "1440p High": "80+ FPS",
+            "Competitive": "240+ FPS"
+        },
+        stock: true,
+        featured: false
+    },
+    {
+        id: 9,
+        name: "Content Creator Ultra",
+        category: "Content Creation",
+        price: 3599,
+        image: "fas fa-desktop",
+        badge: "Creator Pro",
+        specs: {
+            cpu: "AMD Ryzen 9 7950X3D",
+            gpu: "RTX 4090 24GB",
+            ram: "64GB DDR5-6000",
+            storage: "2TB NVMe SSD"
+        },
+        performance: {
+            "4K Video": "Real-time",
+            "3D Rendering": "Ultra Fast",
+            "Streaming": "Perfect"
+        },
+        stock: true,
+        featured: false
+    },
+    {
+        id: 10,
+        name: "Office Pro Workstation",
+        category: "Professional",
+        price: 1899,
+        image: "fas fa-desktop",
+        badge: "Business",
+        specs: {
+            cpu: "Intel i7-13700",
+            gpu: "RTX A2000 12GB",
+            ram: "32GB DDR5-4800",
+            storage: "1TB NVMe SSD"
+        },
+        performance: {
+            "CAD": "Professional",
+            "Multi-tasking": "Excellent",
+            "Productivity": "Optimized"
+        },
+        stock: true,
+        featured: false
+    },
+    {
+        id: 11,
+        name: "Budget Gaming Starter",
+        category: "Entry Level",
+        price: 699,
+        image: "fas fa-desktop",
+        badge: "Starter",
+        specs: {
+            cpu: "AMD Ryzen 5 5500",
+            gpu: "GTX 1650 4GB",
+            ram: "16GB DDR4-3200",
+            storage: "512GB SSD"
+        },
+        performance: {
+            "1080p Medium": "50+ FPS",
+            "Esports": "80+ FPS",
+            "Entry Gaming": "Good"
+        },
+        stock: true,
+        featured: false
+    },
+    {
+        id: 12,
+        name: "Stream Master Pro",
+        category: "Streaming",
+        price: 2199,
+        image: "fas fa-desktop",
+        badge: "Stream Pro",
+        specs: {
+            cpu: "AMD Ryzen 9 7900X",
+            gpu: "RTX 4070 Super 12GB",
+            ram: "32GB DDR5-5600",
+            storage: "1TB NVMe SSD"
+        },
+        performance: {
+            "1440p Gaming": "100+ FPS",
+            "Streaming Quality": "4K60",
+            "Multi-stream": "Perfect"
+        },
+        stock: true,
+        featured: false
     }
 ];
 
@@ -727,29 +853,24 @@ function filterByCategory(category) {
     // Clear existing filters
     filter.clearAllFilters();
     
-    // Apply category filter based on category mapping
-    const categoryMapping = {
-        'gaming': ['High-End Gaming', 'Competitive Gaming'],
-        'streaming': ['Streaming', 'Content Creation'],
-        'professional': ['Professional'],
-        'budget': ['Entry Level']
-    };
+    // Apply category filter directly with the category name
+    console.log('Filtering by category:', category);
     
-    if (categoryMapping[category]) {
-        filter.filters.categories = categoryMapping[category];
-        filter.applyFilters();
-        
-        // Scroll to products
-        document.querySelector('.products-section').scrollIntoView({
+    // Set the category filter directly
+    filter.filters.categories = [category];
+    filter.applyFilters();
+    
+    // Scroll to products section
+    const productsSection = document.querySelector('.products-section');
+    if (productsSection) {
+        productsSection.scrollIntoView({
             behavior: 'smooth'
         });
-        
-        // Update UI to show selected categories
-        categoryMapping[category].forEach(cat => {
-            const checkbox = document.querySelector(`input[value="${cat}"]`);
-            if (checkbox) checkbox.checked = true;
-        });
     }
+    
+    // Update UI to show selected category checkbox
+    const checkbox = document.querySelector(`input.category-filter[value="${category}"]`);
+    if (checkbox) checkbox.checked = true;
 }
 
 function openCustomConfigurator() {

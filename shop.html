@@ -122,37 +122,53 @@
                 <p>Finde den perfekten PC für deinen Einsatz</p>
             </div>
             <div class="categories-grid">
-                <div class="category-card" data-category="gaming">
+                <div class="category-card" onclick="filterByCategory('High-End Gaming')" style="cursor: pointer;">
                     <div class="category-icon">
                         <i class="fas fa-gamepad"></i>
                     </div>
                     <h3>Gaming PCs</h3>
                     <p>High-End Gaming Builds</p>
-                    <div class="category-count">8 Builds</div>
+                    <div class="category-count">3 Builds</div>
                 </div>
-                <div class="category-card" data-category="streaming">
+                <div class="category-card" onclick="filterByCategory('Streaming')" style="cursor: pointer;">
                     <div class="category-icon">
                         <i class="fas fa-video"></i>
                     </div>
                     <h3>Streaming PCs</h3>
                     <p>Optimiert für Content Creation</p>
-                    <div class="category-count">4 Builds</div>
+                    <div class="category-count">1 Build</div>
                 </div>
-                <div class="category-card" data-category="professional">
+                <div class="category-card" onclick="filterByCategory('Professional')" style="cursor: pointer;">
                     <div class="category-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3>Workstations</h3>
                     <p>Professionelle Arbeitsplätze</p>
-                    <div class="category-count">3 Builds</div>
+                    <div class="category-count">2 Builds</div>
                 </div>
-                <div class="category-card" data-category="budget">
+                <div class="category-card" onclick="filterByCategory('Entry Level')" style="cursor: pointer;">
                     <div class="category-icon">
                         <i class="fas fa-euro-sign"></i>
                     </div>
                     <h3>Budget PCs</h3>
                     <p>Einstieg ins PC Gaming</p>
-                    <div class="category-count">5 Builds</div>
+                    <div class="category-count">2 Builds</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Competitive Gaming')" style="cursor: pointer;">
+                    <div class="category-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Competitive Gaming</h3>
+                    <p>Esports Performance</p>
+                    <div class="category-count">2 Builds</div>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Content Creation')" style="cursor: pointer;">
+                    <div class="category-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <p>Video & Design</p>
+                    <div class="category-count">2 Builds</div>
                 </div>
             </div>
         </div>
@@ -216,24 +232,34 @@
                     <h4>Kategorie</h4>
                     <div class="filter-options">
                         <label class="filter-checkbox">
-                            <input type="checkbox" value="entry" onchange="applyFilters()">
+                            <input type="checkbox" value="Entry Level" class="category-filter">
                             <span class="checkmark"></span>
                             Entry Gaming
                         </label>
                         <label class="filter-checkbox">
-                            <input type="checkbox" value="mid" onchange="applyFilters()">
+                            <input type="checkbox" value="Competitive Gaming" class="category-filter">
                             <span class="checkmark"></span>
-                            Mid-Range
+                            Competitive Gaming
                         </label>
                         <label class="filter-checkbox">
-                            <input type="checkbox" value="high" onchange="applyFilters()">
+                            <input type="checkbox" value="High-End Gaming" class="category-filter">
                             <span class="checkmark"></span>
-                            High-End
+                            High-End Gaming
                         </label>
                         <label class="filter-checkbox">
-                            <input type="checkbox" value="extreme" onchange="applyFilters()">
+                            <input type="checkbox" value="Professional" class="category-filter">
                             <span class="checkmark"></span>
-                            Extreme
+                            Workstation
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="Content Creation" class="category-filter">
+                            <span class="checkmark"></span>
+                            Content Creation
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" value="Streaming" class="category-filter">
+                            <span class="checkmark"></span>
+                            Streaming
                         </label>
                     </div>
                 </div>
